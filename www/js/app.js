@@ -23,6 +23,12 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
+  .state('splashscreen', {
+    url: "/",
+    templateUrl: "templates/splashscreen.html",
+    controller: 'SplashCtrl'
+  })
+
   .state('app', {
     url: "/app",
     abstract: true,
@@ -30,42 +36,43 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: "/search",
+  .state('app.activities', {
+    url: "/activities",
     views: {
       'menuContent': {
-        templateUrl: "templates/search.html"
+        templateUrl: "templates/activities.html"
       }
     }
   })
 
-  .state('app.browse', {
-    url: "/browse",
+  .state('app.activities-detail', {
+    url: "/activities/activityId",
     views: {
       'menuContent': {
-        templateUrl: "templates/browse.html"
+        templateUrl: "templates/activities-detail.html"
       }
     }
   })
-    .state('app.playlists', {
-      url: "/playlists",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
 
-  .state('app.single', {
-    url: "/playlists/:playlistId",
+  .state('app.selection', {
+    url: "/selection",
     views: {
       'menuContent': {
-        templateUrl: "templates/playlist.html",
-        controller: 'PlaylistCtrl'
+        templateUrl: "templates/selection.html"
       }
     }
-  });
+  })
+
+  .state('app.selection-detail', {
+    url: "/selection/selectionId",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/selection-detail.html"
+      }
+    }
+  })
+
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/');
 });
