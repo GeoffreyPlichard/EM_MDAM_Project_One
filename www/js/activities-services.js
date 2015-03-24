@@ -35,4 +35,17 @@ angular.module('activities.services', [])
 
 		};
 
+	})
+
+	.factory('FavoriteService', function(){
+
+		var favorites;
+
+		return {
+			getAll: function(){
+				favorites = localStorage.getItem('activities.favorites');
+				return (favorites) ? JSON.parse(favorites) : [];
+			}
+		};
+
 	});
