@@ -34,8 +34,17 @@ angular.module('activities.controllers', [])
 
 		$scope.favorites = FavoriteService.getAll();
 
+		// Get all categories
 		ActivitiesService.get_categories(function(res){
 			$scope.all_activities = res.data;
+			// Check categories according to favorites categories
+			for (var i = 0; i < $scope.favorites.length; i++){
+				for (var j = 0; j < $scope.all_activities.length; j++){
+					if($scope.favorites[i].idcategories == $scope.all_activities[j].idcategories){
+						$scope.all_activities[j].checked = true;
+					}
+				}
+			}
 		});
 
 		$ionicModal.fromTemplateUrl('my-modal.html', {
