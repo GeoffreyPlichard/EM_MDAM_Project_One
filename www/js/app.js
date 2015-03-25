@@ -37,6 +37,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'activities.services'
   })
 
   .state('app.activities', {
+    cache: false,
     url: "/activities",
     views: {
       'menuContent': {
