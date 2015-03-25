@@ -7,6 +7,7 @@ angular.module('activities.controllers', [])
 
 	.controller('ActivitiesCtrl', function($scope, $http, ActivitiesService){
 
+		// Get localStorage settings
 		var favorites_equipments = JSON.parse(localStorage.getItem('activities.favorites'));
 		var equipment_ids = [];
 		for (var i = 0; i < favorites_equipments.length; i++){

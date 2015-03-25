@@ -29,6 +29,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'activities.services'
     controller: 'SplashCtrl'
   })
 
+  .state('signup', {
+    url: "/signup",
+    templateUrl: "templates/sign-up.html"
+    
+  })
+
   .state('app', {
     url: "/app",
     abstract: true,
