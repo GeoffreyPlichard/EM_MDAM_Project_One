@@ -21,9 +21,20 @@ angular.module('activities.services', [])
 					});
 			},
 
-			get_equipments: function(q, cb){
+			get_equipments: function(id, cb){
 				$http
-					.get('https://api.paris.fr/api/data/1.1/Equipements/get_equipements/?token=9127a98dbdf42ad085f3d9f97dd0d301a3e12bb530798f441d83dc49cb8e2672&offset=0&limit=10&cid='+ q)
+					.get('https://api.paris.fr/api/data/1.1/Equipements/get_equipements/?token=9127a98dbdf42ad085f3d9f97dd0d301a3e12bb530798f441d83dc49cb8e2672&offset=0&limit=10&cid='+ id)
+					.success(function(res){
+						cb(res);
+						
+					})
+					.error(function(res){
+
+					});
+			},
+			get_equipment: function(id, cb){
+				$http
+					.get('https://api.paris.fr/api/data/1.0/Equipements/get_equipement/?token=9127a98dbdf42ad085f3d9f97dd0d301a3e12bb530798f441d83dc49cb8e2672&id='+ id)
 					.success(function(res){
 						cb(res);
 						

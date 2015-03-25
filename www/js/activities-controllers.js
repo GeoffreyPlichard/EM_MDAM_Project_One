@@ -7,6 +7,7 @@ angular.module('activities.controllers', [])
 
 	.controller('ActivitiesCtrl', function($scope, $http, ActivitiesService){
 
+
 		// Get localStorage settings
 		var favorites_equipments = JSON.parse(localStorage.getItem('activities.favorites'));
 		var equipment_ids = [];
@@ -22,8 +23,10 @@ angular.module('activities.controllers', [])
 	})
 
 	.controller('EquipmentsCtrl', function($scope, $stateParams, ActivitiesService){
-		ActivitiesService.get_equipments($stateParams.idcategories, function(res){
-			$scope.equipments = res.data;
+		ActivitiesService.get_equipment($stateParams.equipmentId, function(res){
+			var equipment_tmp = res.data;
+			$scope.equipment = equipment_tmp[0];
+			console.log($scope.equipment.name);
 		});
 	})
 
