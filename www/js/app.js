@@ -57,7 +57,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'activities.services'
     url: "/activities/:equipmentId",
     views: {
       'menuContent': {
-        templateUrl: "templates/activities-equipments.html",
+        templateUrl: "templates/activities-detail.html",
         controller: 'EquipmentsCtrl'
       }
     }
