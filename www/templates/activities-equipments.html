@@ -1,12 +1,30 @@
-<!-- <ion-view view-title="Activités">
-  <ion-content>
-    <ion-list>
-    	<ion-item ng-repeat="equipment in equipments">
-        {{ equipment.name }}
-      	</ion-item>
-    </ion-list>
-  </ion-content>
-</ion-view> -->
+<script id="date-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Choisissez une date</h1>
+    </ion-header-bar>
+    <ion-content>
+    	<form name="dateForm" novalidate ng-submit="dateForm.$valid && addToSelection(this, equipment)">
+	    	<div class="list">
+	    	  <label class="item item-input item-stacked-label">
+	    	    <span class="input-label">Jour</span>
+	    	    <input type="date" ng-model="selection.date" required>
+	    	  </label>
+	    	  <label class="item item-input item-stacked-label">
+	    	    <span class="input-label">Heure de début</span>
+	    	    <input type="time" ng-model="selection.start" required>
+	    	  </label>
+	    	  <label class="item item-input item-stacked-label">
+	    	    <span class="input-label">Heure de fin</span>
+	    	    <input type="time" ng-model="selection.end" required>
+	    	  </label>
+	    	  <div>form is {{ dateForm.$valid }}</div>
+	    	  <input type="submit" value="Valider" class="button button-block button-positive">
+	    	</div>
+    	</form>
+    </ion-content>
+  </ion-modal-view>
+</script>
 
 <ion-view view-title="Activité" class="Activity" >
   	<ion-content>
@@ -22,7 +40,7 @@
    				<p ng-bind-html="equipment.description"></p>
    		</div>
 		
-			<button class="button button-block button-positive">
+			<button class="button button-block button-positive" ng-click="modal.show()">
 				JE VEUX Y ALLER ! 
 			</button>
 			

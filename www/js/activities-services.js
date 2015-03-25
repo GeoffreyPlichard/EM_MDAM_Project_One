@@ -75,4 +75,37 @@ angular.module('activities.services', [])
 			}
 		};
 
+	})
+
+	.factory('SelectionService', function(){
+
+		var selection;
+
+		return {
+			getAll: function(){
+				selections = localStorage.getItem('activities.selection');
+				return (selections) ? JSON.parse(selections) : [];
+			},
+
+			add: function(item){
+				// this.remove(item);
+				selection = this.getAll();
+				selection.push(item);
+				localStorage.setItem('activities.selection', JSON.stringify(selection));
+			}/*,
+			remove : function(item) {
+		      selections = this.getAll();
+
+		      for (var i = 0, len = selections.length; i < len; ++i) {
+		        if (selections[i].id === item.id) {
+		          selections.splice(i, 1);
+		          break;
+		        }
+		      }
+
+		      // ... sauvegarde en localStorage
+		      localStorage.setItem('activities.selection', JSON.stringify(selections));
+		    },*/
+		};
+
 	});

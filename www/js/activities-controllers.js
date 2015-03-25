@@ -22,12 +22,41 @@ angular.module('activities.controllers', [])
 
 	})
 
-	.controller('EquipmentsCtrl', function($scope, $stateParams, ActivitiesService){
+
+	.controller('EquipmentsCtrl', function($scope,$ionicModal, $stateParams, ActivitiesService, SelectionService){
+
 		ActivitiesService.get_equipment($stateParams.equipmentId, function(res){
 			var equipment_tmp = res.data;
 			$scope.equipment = equipment_tmp[0];
 			console.log($scope.equipment.name);
 		});
+
+		$ionicModal.fromTemplateUrl('date-modal.html', {
+		    scope: $scope,
+		    animation: 'slide-in-up'
+		  }).then(function(modal) {
+		    $scope.modal = modal;
+		  });
+
+		$scope.openModal = function() {
+			$scope.modal.show();
+		};
+
+		$scope.addToSelection = function(form, equipment){
+			var selection = {
+				equipment 	: equipment,
+				date 		: form.selection.date,
+				start 		: form.selection.start,
+				end 		: form.selection.end
+			};
+			SelectionService.add(selection);
+		};
+
+		
+	})
+
+	.controller('SelectionCtrl', function($scope, SelectionService){
+		$scope.selections = SelectionService.getAll();
 	})
 
 	.controller('SettingsCtrl', function($scope, $ionicModal, ActivitiesService, FavoriteService, $ionicPopup){

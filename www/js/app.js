@@ -77,7 +77,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'activities.services'
     url: "/selection",
     views: {
       'menuContent': {
-        templateUrl: "templates/selection.html"
+        templateUrl: "templates/selection.html",
+        controller: 'SelectionCtrl'
       }
     }
   })

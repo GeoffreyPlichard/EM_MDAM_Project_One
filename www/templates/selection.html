@@ -1,62 +1,22 @@
 <ion-view view-title="Selection"  class="selection" >
 	
 	<ion-content>
+
 		<div class="list">
 			<div class="item item-divider">
 			    Catégorie 1
 			</div>
-			
-			<div class="item item-avatar" >
+
+			<div class="item item-avatar" ng-repeat="selection in selections">
 				<a href="#">
 			    
 			    	<span class="ion-plus-circled" data-pack="default" data-tags="add, include, new, invite, +"></span>
-			      	<h2>Venkman's bar</h2><br />
+			      	<h2>{{ selection.equipment.name }}</h2><br />
 			      	<p>17, rue de l'orphelinat, 75 010</p>
 			   </a>
 			    <div class="ion-bookmark" data-pack="default" data-tags="favorite"></div>
 			</div>
-
-			<div class="item item-avatar" >
-				<a href="#">
-			    	<span class="ion-plus-circled" data-pack="default" data-tags="add, include, new, invite, +"></span>
-			      	<h2>Venkman's bar</h2><br />
-			      	<p>17, rue de l'orphelinat, 75 010</p>
-			    </a>
-			    <div class="ion-bookmark" data-pack="default" data-tags="favorite"></div>
-
-			</div>
-			<div class="item item-avatar" >
-				<a href="#">
-			    
-			    	<span class="ion-plus-circled" data-pack="default" data-tags="add, include, new, invite, +"></span>
-			      	<h2>Venkman's bar</h2><br />
-			      	<p>17, rue de l'orphelinat, 75 010</p>
-			    </a>
-			    <div class="ion-bookmark" data-pack="default" data-tags="favorite"></div>
-
-			</div>
-
-			<div class="item item-divider">
-			    Catégorie 2
-			</div>
-			<div class="item item-avatar" >
-				<a href="#">
-			    	<span class="ion-plus-circled" data-pack="default" data-tags="add, include, new, invite, +"></span>
-			      	<h2>Venkman's bar</h2><br />
-			      	<p>17, rue de l'orphelinat, 75 010</p>
-			    </a>
-			    <div class="ion-bookmark" data-pack="default" data-tags="favorite"></div>
-			    
-			</div>
-			<div class="item item-avatar" >
-				<a href="#">
-			    
-			    	<span class="ion-plus-circled" data-pack="default" data-tags="add, include, new, invite, +"></span>
-			      	<h2>Venkman's bar</h2><br />
-			      	<p>17, rue de l'orphelinat, 75 010</p>
-			    </a>
-		      	<div class="ion-bookmark" data-pack="default" data-tags="favorite"></div>
-			</div>
+			
 		</div>
 	</ion-content>
 </ion-view>
