@@ -1,8 +1,7 @@
 <ion-view view-title="Take your face" class="splashscreen" >
   <ion-content>
-    <!-- <h1>ICI PHOTO API</h1> -->
     <div class="logo">
-    	<img src="../img/logo.png">
+    	<img src="img/logo.png">
     </div>
      <form ng-submit="doLogin()">
       <div class="list">
@@ -22,6 +21,6 @@
       </div>
     </form>
 
-    <div class="sign-up"><br /><a href="#" >Pas encore inscris ?</a></div>
+    <div class="sign-up"><br /><a href="#" ng-click="getPhoto()" >Pas encore inscris ?</a></div>
   </ion-content>
 </ion-view>
