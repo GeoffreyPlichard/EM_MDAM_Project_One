@@ -16,7 +16,7 @@
   			</ul>
   		</div>
 		
-		
+		<img src="{{data_picture_url}}" alt="photo de profil" width="100%"/>
   		
   		<div class="sign-up-1" >
   			<div class="list">
@@ -41,16 +41,16 @@
   				
 				<label class="item item-input">
 			    	<span class="input-label">Age</span>
-			    	<input type="text" value="24 ans">
+			    	<input type="text" value="{{data_picture.age.value}} ans">
 			  	</label>
 			  	<label class="item item-input">
 			    	<span class="input-label">Sexe</span>
-			    	<input type="text" value="Feminin">
+			    	<input type="text" value="{{data_picture.gender.value}}">
 			  	</label>
 
 			  	<label class="item item-input">
 			    	<span class="input-label">Ethnie</span>
-			    	<input type="text" value="Asiatique">
+			    	<input type="text" value="{{data_picture.race.value}}">
 			  	</label>
 			  	<button class="button button-block button-positive">Continuer</button>
 			</div>
