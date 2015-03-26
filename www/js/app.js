@@ -64,7 +64,7 @@ angular.module('starter', ['ionic', 'starter.controllers','camera.controllers', 
     url: "/activities/:equipmentId",
     views: {
       'menuContent': {
-        templateUrl: "templates/activities-detail.html",
+        templateUrl: "templates/activities-equipments.html",
         controller: 'EquipmentsCtrl'
       }
     }
