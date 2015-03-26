@@ -5,22 +5,14 @@
     </div>
      <form ng-submit="doLogin()">
       <div class="list">
-        
-        <label class="item item-input">
-    		<input type="text" ng-model="loginData.username" placeholder="Utilisateur">
-  		</label>
-
-  		<label class="item item-input">
-    		<input type="password"  placeholder="Password" ng-model="loginData.password"  >
-  		</label>
-
       
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
-        </label>
+          <button class="button button-block button-positive" type="submit" ng-click="checkAccount()">Se Connecter</button>
+
+          <button class="button button-block button-balanced" type="submit" ng-hide="accountExist" ng-click="showConfirm()">Créer un compte</button>
+          
+          <button class="button button-block button-assertive" type="submit" ng-show="accountExist" ng-click="deleteAccount()">Supprimer mon compte</button>
+
       </div>
     </form>
-
-    <div class="sign-up"><br /><a href="#" ng-click="getPhoto()" >Pas encore inscris ?</a></div>
   </ion-content>
 </ion-view>

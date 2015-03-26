@@ -7,6 +7,7 @@
 angular.module('starter', ['ionic', 'starter.controllers','camera.controllers', 'camera.services', 'activities.services', 'activities.controllers', 'users.services'])
 
 
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
