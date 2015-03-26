@@ -36,7 +36,7 @@ angular.module('starter', ['ionic', 'starter.controllers','camera.controllers', 
     
   })
 
-  .state('signup.activities', {
+  .state('signupActivities', {
     url: "/signupActivities",
     templateUrl: "templates/signup-activities.html"
     

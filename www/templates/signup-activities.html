@@ -1,4 +1,4 @@
-<ion-view view-title="sign-up"  class="sign-up" >
+<ion-view view-title="sign-up"  class="sign-up " >
 	<div class="bar bar-header bar-light">
 		<h1 class="title">Complétez votre profil</h1>
   		<h1 class="title" style="display:none;" >Selectionnez vos favoris</h1>
@@ -8,10 +8,10 @@
 
   	<ion-content>
 
-  		<div class="header">
+  		<div class="header activities">
   			<ul>
-  				<li><a href="#">1</a></li>
-  				<li><a href="#">2</a></li>
+  				<li class="done"><a href="#/signupInfos"  >1</a></li>
+  				<li class="active"><a href="#/signupActivities" >2</a></li>
   				<div class="bar"></div>
   			</ul>
   		</div>
@@ -64,7 +64,7 @@
 					Catégorie 3
 				</li>
 
-			  	<button class="button button-block button-positive">Continuer</button>
+			  	<a href="#/app/activities" class="button button-block button-positive">Continuer</a>
 			</div>
   		</div>
 	</ion-content>
