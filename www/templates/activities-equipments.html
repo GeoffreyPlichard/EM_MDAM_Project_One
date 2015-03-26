@@ -18,7 +18,7 @@
 	    	    <span class="input-label">Heure de fin</span>
 	    	    <input type="time" ng-model="selection.end" required>
 	    	  </label>
-	    	  <div>form is {{ dateForm.$valid }}</div>
+	    	  
 	    	  <input type="submit" value="Valider" class="button button-block button-positive">
 	    	</div>
     	</form>
@@ -32,7 +32,7 @@
   		
   		<div class="item item-text-wrap adresse">
    			<h2>{{ equipment.name }}</h2>
-   			<p>{{ equipment.address }}, {{ equipment.zipCode }}</p>
+   			<p>{{ equipment.address}}, {{ equipment.zipCode }}</p>
    			<p ng-bind-html="equipment.phone"></p>
    		</div>
 
@@ -50,27 +50,15 @@
     		<li class="item">
     			ILS Y VONT AUSSI !
     		</li>
-			<div class="list" ng-app="user" ng-controller="usersCtrl">
+			<div class="list" >
 
-				<li ng-repeat="user in names">
-				    {{ user.id }}
-				  </li>
-
-			    <!-- <a class="item item-thumbnail-left" href="#">
-			      	<img src="http://cache1.asset-cache.net/xc/156872951.jpg?v=2&c=IWSAsset&k=2&d=TafE6DNT2L4iZTkDy6-aDwRGIPV2yvBxrdO8Oh_xz0dQUguYKgw0e52IyxjdAhHs0">
-			    	<h2>Sophie M, 25 ans - Mardi 31 à 10h00</h2><br><br>
+				<a ng-repeat="user in users " class="item item-thumbnail-left" href="#" ng-if="equipment.idequipements == user.usersSelections.equipement.idequipements" >
+			      	<img ng-src="{{user.photo}}">
+			    	<h2>{{user.prenom}} {{user.nom}}, {{user.age}} ans</h2><br>
+					<div>Le {{user.usersSelections.date}} à {{user.usersSelections.start}}</div>
+			    	<br>
 			     	<span class="ion-arrow-right-b" data-pack="default" data-tags=""></span> <span class="add-invitation" >Tu veux l'accompagner ?</span>
 			    </a>
-			    <a class="item item-thumbnail-left" href="#">
-			      	<img src="http://s.plurielles.fr/mmdia/i/09/4/jeune-femme-en-train-de-manger-10880094frikb_2041.jpg">
-			    	<h2>Marie k, 22 ans - Lundi 30 à 13h00</h2><br><br>
-			     	<span class="ion-arrow-right-b" data-pack="default" data-tags=""></span> <span class="add-invitation" >Tu veux l'accompagner ?</span>
-			    </a>
-			    <a class="item item-thumbnail-left" href="#">
-			      	<img src="http://1jour1actu.com/wp-content/uploads/faire-du-sport-permet-de-rester-jeune.jpeg">
-			    	<h2>Katty P, 20 ans - Lundi 30 à 13h00</h2><br><br>
-			     	<span class="ion-arrow-right-b" data-pack="default" data-tags=""></span> <span class="add-invitation" >Tu veux l'accompagner ?</span>
-			    </a>-->
 			</div>
 		</ul>
   	</ion-content>

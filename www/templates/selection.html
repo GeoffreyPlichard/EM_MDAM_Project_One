@@ -4,15 +4,15 @@
 
 		<div class="list">
 			<div class="item item-divider">
-			    Catégorie 1
+			    Catégorie
 			</div>
 
 			<div class="item item-avatar" ng-repeat="selection in selections">
-				<a href="#">
+				<a href="#/app/selection/{{selection.equipment.idequipements}}">
 			    
 			    	<span class="ion-plus-circled" data-pack="default" data-tags="add, include, new, invite, +"></span>
 			      	<h2>{{ selection.equipment.name }}</h2><br />
-			      	<p>17, rue de l'orphelinat, 75 010</p>
+			      	<p>{{ selection.equipment.address }}, {{ selection.equipment.zipCode }}</p>
 			   </a>
 			    <div class="ion-bookmark" data-pack="default" data-tags="favorite"></div>
 			</div>
