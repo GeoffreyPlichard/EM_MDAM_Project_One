@@ -5,7 +5,7 @@
  */
 angular.module('activities.controllers', [])
 
-	.controller('ActivitiesCtrl', function($scope, $http, ActivitiesService){
+	.controller('ActivitiesCtrl', function($scope, $http, ActivitiesService, SelectionService){
 
 
 		// Get localStorage settings
@@ -14,12 +14,29 @@ angular.module('activities.controllers', [])
 		if(favorites_equipments){
 			for (var i = 0; i < favorites_equipments.length; i++){
 				equipment_ids.push(favorites_equipments[i].idcategories);
+
 			}
 		}
 		
 
 		ActivitiesService.get_geo_equipments(equipment_ids, 48.856332, 2.353453, 500, function(res){
 			$scope.equipments = res.data;
+
+			$scope.selections =SelectionService.getAll();
+
+			//console.log($scope.selections);
+
+				for (var i = 0; i < $scope.selections.length; i++){
+					for (var j = 0; j < $scope.equipments.length; j++){
+						if($scope.selections[i].equipment.idequipements == $scope.equipments[j].id){
+							$scope.equipments[j].selected = true;
+							console.log($scope.equipments[j].selected);
+
+						}
+					}
+				}
+			
+
 		});
 		
 
@@ -74,6 +91,7 @@ angular.module('activities.controllers', [])
 				for (var j = 0; j < $scope.all_activities.length; j++){
 					if($scope.favorites[i].idcategories == $scope.all_activities[j].idcategories){
 						$scope.all_activities[j].checked = true;
+
 					}
 				}
 			}
