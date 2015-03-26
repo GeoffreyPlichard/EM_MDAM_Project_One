@@ -8,6 +8,16 @@ angular.module('activities.controllers', [])
 
 	.controller('ActivitiesCtrl', function($scope, $http, ActivitiesService, SelectionService){
 
+		// Get localStorage settings
+		var favorites_equipments = JSON.parse(localStorage.getItem('activities.favorites'));
+		var equipment_ids = [];
+		if(favorites_equipments){
+			for (var i = 0; i < favorites_equipments.length; i++){
+				equipment_ids.push(favorites_equipments[i].idcategories);
+
+			}
+		}
+
 		var onSuccess = function(position) {
 
 			console.log('Latitude: '          + position.coords.latitude          + '\n' +
@@ -24,8 +34,6 @@ angular.module('activities.controllers', [])
 				$scope.equipments = res.data;
 
 				$scope.selections =SelectionService.getAll();
-
-			//console.log($scope.selections);
 
 				for (var i = 0; i < $scope.selections.length; i++){
 					for (var j = 0; j < $scope.equipments.length; j++){
