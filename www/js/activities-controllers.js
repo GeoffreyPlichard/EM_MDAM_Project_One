@@ -11,9 +11,12 @@ angular.module('activities.controllers', [])
 		// Get localStorage settings
 		var favorites_equipments = JSON.parse(localStorage.getItem('activities.favorites'));
 		var equipment_ids = [];
-		for (var i = 0; i < favorites_equipments.length; i++){
-			equipment_ids.push(favorites_equipments[i].idcategories);
+		if(favorites_equipments){
+			for (var i = 0; i < favorites_equipments.length; i++){
+				equipment_ids.push(favorites_equipments[i].idcategories);
+			}
 		}
+		
 
 		ActivitiesService.get_geo_equipments(equipment_ids, 48.856332, 2.353453, 500, function(res){
 			$scope.equipments = res.data;
