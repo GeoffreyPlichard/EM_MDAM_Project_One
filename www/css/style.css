@@ -98,7 +98,13 @@
 
 
 /* Sign-up */
-
+.sign-up .photo{
+	width: 200px;
+  	border-radius: 50%;
+  	height: 200px;
+  	overflow: hidden;
+  	margin: 145px auto 30px auto;
+}
 
 
 /* Activites */
