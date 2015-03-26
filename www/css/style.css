@@ -39,7 +39,7 @@
 	background: #ffffff;
 	width: 50px;
 	height: 50px;
-	border: 2px solid black;
+	border: 2px solid grey;
 	border-radius: 50%;
 	float: left;
 	margin-right: 103.8px;
@@ -47,22 +47,6 @@
 
 }
 
-.header.activities ul li{
-	border-color: green;
-}
-
-.header.activities ul li a{
-	color: green;
-}
-
-
-.header ul li:first-child{
-	border-color:green;
-}
-
-.header ul li:first-child a{
-	color:green;
-}
 .header ul li:nth-child(2){
 	margin-right: 0;
 	float: right;
@@ -79,7 +63,7 @@
 .header .bar{
 	width: 100%;
 	height: 3px;
-	background: black;
+	background: grey;
 	overflow: hidden;
 	border: none;
 	padding: 0;
@@ -88,23 +72,9 @@
 	z-index: -1;
 }
 
-.activities ul .bar{
-	background: green;
-}
-
-.header ul .done{
-	border-color: green 
-}
-
 
 /* Sign-up */
-.sign-up .photo{
-	width: 200px;
-  	border-radius: 50%;
-  	height: 200px;
-  	overflow: hidden;
-  	margin: 145px auto 30px auto;
-}
+
 
 
 /* Activites */
