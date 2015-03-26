@@ -32,6 +32,7 @@ angular.module('activities.controllers', [])
 
 			ActivitiesService.get_geo_equipments(equipment_ids, position.coords.latitude, position.coords.longitude, 500, function(res){
 				$scope.equipments = res.data;
+				console.log($scope.equipments);
 
 				$scope.selections =SelectionService.getAll();
 
@@ -39,8 +40,6 @@ angular.module('activities.controllers', [])
 					for (var j = 0; j < $scope.equipments.length; j++){
 						if($scope.selections[i].equipment.idequipements == $scope.equipments[j].id){
 							$scope.equipments[j].selected = true;
-							//console.log($scope.equipments[j].selected);
-
 						}
 					}
 				}
