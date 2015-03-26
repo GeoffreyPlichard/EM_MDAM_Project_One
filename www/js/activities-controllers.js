@@ -55,6 +55,9 @@ angular.module('activities.controllers', [])
 		$scope.openModal = function() {
 			$scope.modal.show();
 		};
+		$scope.closeModal = function() {
+			$scope.modal.hide();
+		};
 		$scope.addToSelection = function(form, equipment){
 			var selection = {
 				equipment 	: equipment,
@@ -63,6 +66,7 @@ angular.module('activities.controllers', [])
 				end 		: form.selection.end
 			};
 			SelectionService.add(selection);
+			$scope.closeModal();
 		};
 		
 	})
