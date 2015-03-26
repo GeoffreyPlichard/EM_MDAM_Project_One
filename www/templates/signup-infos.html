@@ -1,0 +1,62 @@
+<ion-view view-title="sign-up"  class="sign-up" >
+	<div class="bar bar-header bar-light">
+		<h1 class="title">Complétez votre profil</h1>
+  		<h1 class="title" style="display:none;" >Selectionnez vos favoris</h1>
+	</div>
+
+	
+
+  	<ion-content>
+
+  		<div class="header">
+  			<ul>
+  				<li><a href="#/signupInfos" class="active" >1</a></li>
+  				<li><a href="#/signupActivities">2</a></li>
+  				<div class="bar"></div>
+  			</ul>
+  		</div>
+		
+		<div class="photo" >
+			<img src="http://www.iphone3gsystem.fr/wp-content/uploads/2014/11/Christian-Bale-ne-jouera-pas-steve-jobs.jpg"  alt="photo de profil" width="100%"/>
+		</div>
+		<!-- <img src="{{data_picture_url}}" class="photo" alt="photo de profil" width="100%"/> -->
+  		
+  		<div class="sign-up-1" >
+  			<div class="list">
+				<label class="item item-input">
+			    	<input type="text" placeholder="Nom">
+			  	</label>
+
+			  	<label class="item item-input">
+			    	<input type="text" placeholder="Prenom">
+			  	</label>
+
+			 	<label class="item item-input">
+			    	<input type="text" placeholder="E-mail">
+			  	</label>
+
+			  	<label class="item item-input">
+			    	<input type="text" placeholder="Telephone">
+			  	</label>
+			  	<label class="item item-input">
+    				<input placeholder="Mot de passe" type="password">
+  				</label>
+  				
+				<label class="item item-input">
+			    	<span class="input-label">Age</span>
+			    	<input type="text" value="{{data_picture.age.value}} ans">
+			  	</label>
+			  	<label class="item item-input">
+			    	<span class="input-label">Sexe</span>
+			    	<input type="text" value="{{data_picture.gender.value}}">
+			  	</label>
+
+			  	<label class="item item-input">
+			    	<span class="input-label">Ethnie</span>
+			    	<input type="text" value="{{data_picture.race.value}}">
+			  	</label>
+			  	<a  href="#/signupActivities" class="button button-block button-positive">Continuer</a>
+			</div>
+  		</div>
+	</ion-content>
+</ion-view>

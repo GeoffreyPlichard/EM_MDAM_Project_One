@@ -1,5 +1,26 @@
 <ion-view view-title="Take your face" class="splashscreen" >
   <ion-content>
-    <!-- <h1>ICI PHOTO API</h1> -->
+    <div class="logo">
+    	<img src="img/logo.png">
+    </div>
+     <form ng-submit="doLogin()">
+      <div class="list">
+        
+        <label class="item item-input">
+    		<input type="text" ng-model="loginData.username" placeholder="Utilisateur">
+  		</label>
+
+  		<label class="item item-input">
+    		<input type="password"  placeholder="Password" ng-model="loginData.password"  >
+  		</label>
+
+      
+        <label class="item">
+          <a href="#/signupInfos" class="button button-block button-positive" type="submit">Log in</a>
+        </label>
+      </div>
+    </form>
+
+    <div class="sign-up"><br /><a href="#" ng-click="getPhoto()" >Pas encore inscris ?</a></div>
   </ion-content>
 </ion-view>
