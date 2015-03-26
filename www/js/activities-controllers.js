@@ -4,7 +4,7 @@
  * Paris API Controllers
  */
 angular.module('activities.controllers', [])
-	.controller('ActivitiesCtrl', function($scope, $http, ActivitiesService, SelectionService){
+	.controller('ActivitiesCtrl', function($scope, $http, ActivitiesService, SelectionService, FavoriteService){
 		// Get localStorage settings
 		var favorites_equipments = JSON.parse(localStorage.getItem('activities.favorites'));
 		var equipment_ids = [];
@@ -22,7 +22,7 @@ angular.module('activities.controllers', [])
 		          'Heading: '           + position.coords.heading           + '\n' +
 		          'Speed: '             + position.coords.speed             + '\n' +
 		          'Timestamp: '         + position.timestamp                + '\n');
-			ActivitiesService.get_geo_equipments(equipment_ids, position.coords.latitude, position.coords.longitude, 500, function(res){
+			ActivitiesService.get_geo_equipments(equipment_ids, position.coords.latitude, position.coords.longitude, FavoriteService.getRay(), function(res){
 				$scope.equipments = res.data;
 				$scope.selections =SelectionService.getAll();
 				for (var i = 0; i < $scope.selections.length; i++){
@@ -45,6 +45,7 @@ angular.module('activities.controllers', [])
 		ActivitiesService.get_equipment($stateParams.equipmentId, function(res){
 			var equipment_tmp = res.data;
 			$scope.equipment = equipment_tmp[0];
+			console.log($scope.equipment);
 		});
 		$ionicModal.fromTemplateUrl('date-modal.html', {
 		    scope: $scope,
@@ -72,6 +73,7 @@ angular.module('activities.controllers', [])
 	})
 	.controller('SelectionCtrl', function($scope, SelectionService){
 		$scope.selections = SelectionService.getAll();
+		console.log($scope.selections);
 	})
 	.controller('SettingsCtrl', function($scope, $ionicModal, ActivitiesService, FavoriteService, $ionicPopup){
 		$scope.favorites = FavoriteService.getAll();
@@ -87,6 +89,9 @@ angular.module('activities.controllers', [])
 				}
 			}
 		});
+
+		// MODAL
+
 		$ionicModal.fromTemplateUrl('my-modal.html', {
 		    scope: $scope,
 		    animation: 'slide-in-up'
@@ -116,5 +121,17 @@ angular.module('activities.controllers', [])
 			$scope.favorites = FavoriteService.getAll();
 			$scope.closeModal();
 		};
-		
+
+		// Get radius from localStorage or give a default value (500)
+		$scope.rayon = FavoriteService.getRay();
+
+		$scope.save_ray = function(ray){
+			FavoriteService.addRay(ray);
+			$ionicPopup.alert({
+		      title: 'Succès de l\'opération',
+		      template: 'Zone de recherche sauvegardée !'
+		    });
+		};
+
+
 	});
