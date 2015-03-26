@@ -10,6 +10,10 @@
 .pane, .view{
 	background: none ;
 }
+
+.popup-body{
+	overflow: hidden;
+}
 /* Splashscreen */
 
 .splashscreen .logo{
@@ -131,16 +135,31 @@
 
 .item-avatar p, .item-avatar h2{
 	display: inline-block;
+	width: 80%;
 }
 
 .item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content{
 	padding-left: 40px;
 }
 
+.none-selected{
+	display: none !important;
+}
+
+.selected{
+	display: inline-block !important;
+}
+
+.activities .item-content{
+	padding: 0 !important;
+}
+
 /* Activites-details */
 
 
 /* Selection */
+
+
 
 
 /* Selection-detail */
