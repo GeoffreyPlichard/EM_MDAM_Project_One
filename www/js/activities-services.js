@@ -58,6 +58,13 @@ angular.module('activities.services', [])
 			getAll: function(){
 				favorites = localStorage.getItem('activities.favorites');
 				return (favorites) ? JSON.parse(favorites) : [];
+			},
+			getRay: function(){
+				ray = localStorage.getItem('activities.ray');
+				return ray || 500;
+			},
+			addRay: function(ray){
+				localStorage.setItem('activities.ray', ray);
 			}
 		};
 	})
