@@ -26,6 +26,7 @@
   </ion-modal-view>
 </script>
 
+
 <ion-view view-title="Activité" class="Activity" >
   	<ion-content>
   		
@@ -49,8 +50,13 @@
     		<li class="item">
     			ILS Y VONT AUSSI !
     		</li>
-			<div class="list">
-			    <a class="item item-thumbnail-left" href="#">
+			<div class="list" ng-app="user" ng-controller="usersCtrl">
+
+				<li ng-repeat="user in names">
+				    {{ user.id }}
+				  </li>
+
+			    <!-- <a class="item item-thumbnail-left" href="#">
 			      	<img src="http://cache1.asset-cache.net/xc/156872951.jpg?v=2&c=IWSAsset&k=2&d=TafE6DNT2L4iZTkDy6-aDwRGIPV2yvBxrdO8Oh_xz0dQUguYKgw0e52IyxjdAhHs0">
 			    	<h2>Sophie M, 25 ans - Mardi 31 à 10h00</h2><br><br>
 			     	<span class="ion-arrow-right-b" data-pack="default" data-tags=""></span> <span class="add-invitation" >Tu veux l'accompagner ?</span>
@@ -64,7 +70,7 @@
 			      	<img src="http://1jour1actu.com/wp-content/uploads/faire-du-sport-permet-de-rester-jeune.jpeg">
 			    	<h2>Katty P, 20 ans - Lundi 30 à 13h00</h2><br><br>
 			     	<span class="ion-arrow-right-b" data-pack="default" data-tags=""></span> <span class="add-invitation" >Tu veux l'accompagner ?</span>
-			    </a>
+			    </a>-->
 			</div>
 		</ul>
   	</ion-content>

@@ -24,8 +24,6 @@ angular.module('activities.controllers', [])
 
 			$scope.selections =SelectionService.getAll();
 
-			//console.log($scope.selections);
-
 				for (var i = 0; i < $scope.selections.length; i++){
 					for (var j = 0; j < $scope.equipments.length; j++){
 						if($scope.selections[i].equipment.idequipements == $scope.equipments[j].id){
@@ -50,6 +48,8 @@ angular.module('activities.controllers', [])
 			$scope.equipment = equipment_tmp[0];
 			console.log($scope.equipment.name);
 		});
+
+		
 
 		$ionicModal.fromTemplateUrl('date-modal.html', {
 		    scope: $scope,
