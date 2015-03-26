@@ -19,43 +19,48 @@
 		<div class="photo" >
 			<img src="{{data_picture_url}}" alt="photo de profil" width="100%"/>
 		</div>
-  		
-  		<div class="sign-up-1" >
-  			<div class="list">
-				<label class="item item-input">
-			    	<input type="text" placeholder="Nom">
-			  	</label>
+  		<form name="searchForm" novalidate ng-submit="searchForm.$valid && addInfos()">
+            <div class="sign-up-1" >
+                <div class="list">
+                    <label class="item item-input">
+                        <input type="text" placeholder="Nom d'utilisateur"  ng-model="formUser.pseudo" ng-required="true">
+                    </label>
+                       
+                   <label class="item item-input">
+                        <input type="text" placeholder="Nom"  ng-model="formUser.nom" ng-required="true">
+                    </label>
 
-			  	<label class="item item-input">
-			    	<input type="text" placeholder="Prenom">
-			  	</label>
+                    <label class="item item-input">
+                        <input type="text" placeholder="Prenom"  ng-model="formUser.prenom" ng-required="true">
+                    </label>
 
-			 	<label class="item item-input">
-			    	<input type="text" placeholder="E-mail">
-			  	</label>
+                    <label class="item item-input">
+                        <input type="text" placeholder="E-mail"  ng-model="formUser.mail" ng-required="true">
+                    </label>
 
-			  	<label class="item item-input">
-			    	<input type="text" placeholder="Telephone">
-			  	</label>
-			  	<label class="item item-input">
-    				<input placeholder="Mot de passe" type="password">
-  				</label>
-  				
-				<label class="item item-input">
-			    	<span class="input-label">Age</span>
-			    	<input type="text" value="{{data_picture.age.value}} ans">
-			  	</label>
-			  	<label class="item item-input">
-			    	<span class="input-label">Sexe</span>
-			    	<input type="text" value="{{data_picture.gender.value}}">
-			  	</label>
+                    <label class="item item-input">
+                        <input type="text" placeholder="Telephone"  ng-model="formUser.tel" ng-required="true">
+                    </label>
+                    <label class="item item-input">
+                        <input placeholder="Mot de passe" type="password"  ng-model="formUser.pwd" ng-required="true">
+                    </label>
 
-			  	<label class="item item-input">
-			    	<span class="input-label">Ethnie</span>
-			    	<input type="text" value="{{data_picture.race.value}}">
-			  	</label>
-			  	<a  href="#/signupActivities" class="button button-block button-positive">Continuer</a>
-			</div>
-  		</div>
+                    <label class="item item-input">
+                        <span class="input-label">Age</span>
+                        <input type="text" value="{{data_picture.age.value}} ans"  ng-model="formUser.age" ng-required="true">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Sexe</span>
+                        <input type="text" value="{{data_picture.gender.value}}"  ng-model="formUser.sexe" ng-required="true">
+                    </label>
+
+                    <label class="item item-input">
+                        <span class="input-label">Ethnie</span>
+                        <input type="text" value="{{data_picture.race.value}}"  ng-model="formUser.ethnie" ng-required="true">
+                    </label>
+                    <input type="submit" value="Continuer" class="button button-block button-positive">
+                </div>
+            </div>
+        </form>
 	</ion-content>
 </ion-view>
