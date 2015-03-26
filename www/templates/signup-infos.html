@@ -10,13 +10,15 @@
 
   		<div class="header">
   			<ul>
-  				<li><a href="#">1</a></li>
-  				<li><a href="#">2</a></li>
+  				<li><a href="#/signupInfos" class="active" >1</a></li>
+  				<li><a href="#/signupActivities">2</a></li>
   				<div class="bar"></div>
   			</ul>
   		</div>
 		
-		<img src="{{data_picture_url}}" alt="photo de profil" width="100%"/>
+		<div class="photo" >
+			<img src="{{data_picture_url}}" alt="photo de profil" width="100%"/>
+		</div>
   		
   		<div class="sign-up-1" >
   			<div class="list">
@@ -52,7 +54,7 @@
 			    	<span class="input-label">Ethnie</span>
 			    	<input type="text" value="{{data_picture.race.value}}">
 			  	</label>
-			  	<button class="button button-block button-positive">Continuer</button>
+			  	<a  href="#/signupActivities" class="button button-block button-positive">Continuer</a>
 			</div>
   		</div>
 	</ion-content>

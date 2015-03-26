@@ -1,64 +1,37 @@
-
-<ion-view view-title="Activités autour de moi">
+<ion-view view-title="Activités autour de moi" class="activities" >
   <ion-content>
     <ion-list>
 
-    	<ion-item ng-repeat="category in equipments" href="#/app/activities/{{category.idcategories}}">
-        {{ category.name }}
-      	</ion-item>
+    	 <ion-item ng-repeat="category in equipments" href="#/app/activities/{{category.id}}">
+        
+
+	        <div class="item item-avatar" >  
+		    	<span class="ion-plus-circled" data-pack="default" data-tags="add, include, new, invite, +"></span>
+		      	<h2>{{ category.name }}</h2><br />
+		      	<p>{{ category.address }}, {{ category.zipCode }}</p>
+
+			      <div class="none-selected" ng-class="{selected : category.selected}" >
+			      	<div class="ion-bookmark" data-pack="default" data-tags="favorite"></div>
+			      </div>
+			</div>
+      	</ion-item >
     </ion-list>
 
-	<div class="list">
-			<div class="item item-divider">
+	<!-- <div class="list">
+		<div class="item item-divider">
 			    Catégorie 1
-			</div>
-			
-			<div class="item item-avatar" >
-				<a href="#">
-			    
-			    	<span class="ion-plus-circled" data-pack="default" data-tags="add, include, new, invite, +"></span>
-			      	<h2>Venkman's bar</h2><br />
-			      	<p>17, rue de l'orphelinat, 75 010</p>
-			   </a>
-			    <div class="ion-bookmark" data-pack="default" data-tags="favorite"></div>
-			</div>
-
-			<div class="item item-avatar" >
-				<a href="#">
-			    	<span class="ion-plus-circled" data-pack="default" data-tags="add, include, new, invite, +"></span>
-			      	<h2>Venkman's bar</h2><br />
-			      	<p>17, rue de l'orphelinat, 75 010</p>
-			    </a>
-			</div>
-			<div class="item item-avatar" >
-				<a href="#">
-			    
-			    	<span class="ion-plus-circled" data-pack="default" data-tags="add, include, new, invite, +"></span>
-			      	<h2>Venkman's bar</h2><br />
-			      	<p>17, rue de l'orphelinat, 75 010</p>
-			    </a>
-			</div>
-
-			<div class="item item-divider">
-			    Catégorie 2
-			</div>
-			<div class="item item-avatar" >
-				<a href="#">
-			    	<span class="ion-plus-circled" data-pack="default" data-tags="add, include, new, invite, +"></span>
-			      	<h2>Venkman's bar</h2><br />
-			      	<p>17, rue de l'orphelinat, 75 010</p>
-			    </a>
-			</div>
-			<div class="item item-avatar" >
-				<a href="#">
-			    
-			    	<span class="ion-plus-circled" data-pack="default" data-tags="add, include, new, invite, +"></span>
-			      	<h2>Venkman's bar</h2><br />
-			      	<p>17, rue de l'orphelinat, 75 010</p>
-			    </a>
-		      	<div class="ion-bookmark" data-pack="default" data-tags="favorite"></div>
-			</div>
 		</div>
-  </ion-content>
--->
+		<ion-item ng-repeat="category in equipments" href="#/app/activities/{{category.id}}">
+			<ion-list>
+				<div class="item item-avatar" >
+					    
+					<span class="ion-plus-circled" data-pack="default" data-tags="add, include, new, invite, +"></span>
+					<h2>{{ equipment.name }}</h2>
+		   			<p>{{ equipment.address }}, {{ equipment.zipCode }}</p>
+					<div class="ion-bookmark" data-pack="default" data-tags="favorite"></div>
+				</div>
+			</ion-list>
+		</ion-item>
+	</div>-->
+</ion-content>
 </ion-view>

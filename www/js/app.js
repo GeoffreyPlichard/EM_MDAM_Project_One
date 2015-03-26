@@ -36,7 +36,7 @@ angular.module('starter', ['ionic', 'starter.controllers','camera.controllers', 
     controller:'SignupInfoCtrl'
   })
 
-  .state('signup.activities', {
+  .state('signupActivities', {
     url: "/signupActivities",
     templateUrl: "templates/signup-activities.html"
     
@@ -64,7 +64,7 @@ angular.module('starter', ['ionic', 'starter.controllers','camera.controllers', 
     url: "/activities/:equipmentId",
     views: {
       'menuContent': {
-        templateUrl: "templates/activities-detail.html",
+        templateUrl: "templates/activities-equipments.html",
         controller: 'EquipmentsCtrl'
       }
     }
@@ -84,7 +84,8 @@ angular.module('starter', ['ionic', 'starter.controllers','camera.controllers', 
     url: "/selection",
     views: {
       'menuContent': {
-        templateUrl: "templates/selection.html"
+        templateUrl: "templates/selection.html",
+        controller: 'SelectionCtrl'
       }
     }
   })

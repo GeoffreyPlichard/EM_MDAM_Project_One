@@ -1,9 +1,71 @@
-<ion-view view-title="Activités">
-  <ion-content>
-    <ion-list>
-    	<ion-item ng-repeat="equipment in equipments">
-        {{ equipment.name }}
-      	</ion-item>
-    </ion-list>
-  </ion-content>
+<script id="date-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Choisissez une date</h1>
+    </ion-header-bar>
+    <ion-content>
+    	<form name="dateForm" novalidate ng-submit="dateForm.$valid && addToSelection(this, equipment)">
+	    	<div class="list">
+	    	  <label class="item item-input item-stacked-label">
+	    	    <span class="input-label">Jour</span>
+	    	    <input type="date" ng-model="selection.date" required>
+	    	  </label>
+	    	  <label class="item item-input item-stacked-label">
+	    	    <span class="input-label">Heure de début</span>
+	    	    <input type="time" ng-model="selection.start" required>
+	    	  </label>
+	    	  <label class="item item-input item-stacked-label">
+	    	    <span class="input-label">Heure de fin</span>
+	    	    <input type="time" ng-model="selection.end" required>
+	    	  </label>
+	    	  <div>form is {{ dateForm.$valid }}</div>
+	    	  <input type="submit" value="Valider" class="button button-block button-positive">
+	    	</div>
+    	</form>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+<ion-view view-title="Activité" class="Activity" >
+  	<ion-content>
+  		
+  		<div class="item item-text-wrap adresse">
+   			<h2>{{ equipment.name }}</h2>
+   			<p>{{ equipment.address }}, {{ equipment.zipCode }}</p>
+   			<p ng-bind-html="equipment.phone"></p>
+   		</div>
+
+   		<div class="item item-text-wrap description">
+   			<h2>Description</h2>
+   				<p ng-bind-html="equipment.description"></p>
+   		</div>
+		
+			<button class="button button-block button-positive" ng-click="modal.show()">
+				JE VEUX Y ALLER ! 
+			</button>
+			
+		
+		<ul class="list">
+    		<li class="item">
+    			ILS Y VONT AUSSI !
+    		</li>
+			<div class="list">
+			    <a class="item item-thumbnail-left" href="#">
+			      	<img src="http://cache1.asset-cache.net/xc/156872951.jpg?v=2&c=IWSAsset&k=2&d=TafE6DNT2L4iZTkDy6-aDwRGIPV2yvBxrdO8Oh_xz0dQUguYKgw0e52IyxjdAhHs0">
+			    	<h2>Sophie M, 25 ans - Mardi 31 à 10h00</h2><br><br>
+			     	<span class="ion-arrow-right-b" data-pack="default" data-tags=""></span> <span class="add-invitation" >Tu veux l'accompagner ?</span>
+			    </a>
+			    <a class="item item-thumbnail-left" href="#">
+			      	<img src="http://s.plurielles.fr/mmdia/i/09/4/jeune-femme-en-train-de-manger-10880094frikb_2041.jpg">
+			    	<h2>Marie k, 22 ans - Lundi 30 à 13h00</h2><br><br>
+			     	<span class="ion-arrow-right-b" data-pack="default" data-tags=""></span> <span class="add-invitation" >Tu veux l'accompagner ?</span>
+			    </a>
+			    <a class="item item-thumbnail-left" href="#">
+			      	<img src="http://1jour1actu.com/wp-content/uploads/faire-du-sport-permet-de-rester-jeune.jpeg">
+			    	<h2>Katty P, 20 ans - Lundi 30 à 13h00</h2><br><br>
+			     	<span class="ion-arrow-right-b" data-pack="default" data-tags=""></span> <span class="add-invitation" >Tu veux l'accompagner ?</span>
+			    </a>
+			</div>
+		</ul>
+  	</ion-content>
 </ion-view>
