@@ -8,7 +8,9 @@
       
           <button class="button button-block button-positive" type="submit" ng-click="checkAccount()">Se Connecter</button>
 
-          <button class="button button-block button-assertive" type="submit" ng-click="showConfirm()">Créer un compte</button>
+          <button class="button button-block button-balanced" type="submit" ng-hide="accountExist" ng-click="showConfirm()">Créer un compte</button>
+          
+          <button class="button button-block button-assertive" type="submit" ng-show="accountExist" ng-click="deleteAccount()">Supprimer mon compte</button>
 
       </div>
     </form>
