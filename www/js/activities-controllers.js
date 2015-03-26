@@ -4,6 +4,13 @@
  * Paris API Controllers
  */
 angular.module('activities.controllers', [])
+
+	.filter('num', function() {
+	    return function(input) {
+	      return parseInt(input, 10);
+	    }
+	})
+
 	.controller('ActivitiesCtrl', function($scope, $http, ActivitiesService, SelectionService, FavoriteService){
 		// Get localStorage settings
 		var favorites_equipments = JSON.parse(localStorage.getItem('activities.favorites'));
