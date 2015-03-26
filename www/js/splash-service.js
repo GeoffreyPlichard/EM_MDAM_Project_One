@@ -1,48 +1,45 @@
 angular.module('camera.services', [])
 
-.factory('Camera', ['$q', function($q) {
+.factory('Camera', function($http,$ionicLoading) {
 
   return {
-    getPicture: function() {
-
-        navigator.camera.getPicture(onSuccess, onFail, {quality: 50,destinationType: Camera.DestinationType.DATA_URL});
+    getPicture: function(callback) {
         
+        navigator.camera.getPicture(onSuccess, onFail, {quality: 50,destinationType: Camera.DestinationType.DATA_URL});
+        $ionicLoading.show({ template: 'Recherche...' });
         function onSuccess(imageData) {
-            var image = document.getElementById('myImage');
-            image.src = "data:image/jpeg;base64," + imageData;            
-            
+  
             var api = new FacePP('2b5858e6f0a840974a8c782fbfbae118',
                      '5XsDRVCSFe0-kL688_8GwlcfxSZ4h311',
                      { apiURL: 'http://apius.faceplusplus.com/v2' });
             
-            
-
-                    $.ajax({
-                        url: 'https://api.imgur.com/3/image',
-                        headers: {
-                            'Authorization': 'Client-ID be1b1e6bf60404c'
-                        },
-                        type: 'POST',
-                        data: {
-                            'image': imageData,
-                            'type': 'base64'
-                        },
-                        success: function(response) {
+                var req = {
+                 method: 'POST',
+                 url: 'https://api.imgur.com/3/image',
+                 headers: {
+                   'Authorization': 'Client-ID be1b1e6bf60404c'
+                 },
+                 data: { 'image': imageData,
+                          'type': 'base64' }
+                }
+              
+                $http(req).success( function(response) {
                            
                             api.request('detection/detect', {
-                              url:  response.data.link
+                              url:  response.data.link,
+                              attribute:'gender,race,age,smiling'
                             }, function(err, result) {
                               if (err) {
-                                $('#response').text('Load failed.');
+                                alert('Load failed.');
                                 return;
                               }
-                              $('#response').text(JSON.stringify(result));
+                              callback(result);
                             });
                             
-                        }, error: function() {
+                        }). error( function() {
                             alert("Error while uploading...");
-                        }
-                    });
+                        });
+                    
             
             
             
@@ -54,4 +51,4 @@ angular.module('camera.services', [])
 
     }
   }
-}]);
+});

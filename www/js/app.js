@@ -32,8 +32,8 @@ angular.module('starter', ['ionic', 'starter.controllers','camera.controllers', 
 
   .state('signup', {
     url: "/signupInfos",
-    templateUrl: "templates/signup-infos.html"
-    
+    templateUrl: "templates/signup-infos.html",
+    controller:'SignupInfoCtrl'
   })
 
   .state('signupActivities', {
