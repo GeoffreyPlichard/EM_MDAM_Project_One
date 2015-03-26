@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers','camera.controllers', 'camera.services', 'activities.services', 'activities.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers','camera.controllers', 'camera.services', 'activities.services', 'activities.controllers','profil.controller'])
 
 
 
@@ -99,8 +99,15 @@ angular.module('starter', ['ionic', 'starter.controllers','camera.controllers', 
       }
     }
   })
-
-
+  .state('app.profil', {
+    url: "/profil",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/profil.html",
+        controller:"ProfilCtrl"
+      }
+    }
+  })
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
 });

@@ -80,7 +80,8 @@
 	border-color: green 
 }
 /* Sign-up */
-.sign-up .photo{
+.sign-up .photo,
+.profil .photo{
 	width: 200px;
   	border-radius: 50%;
   	height: 200px;

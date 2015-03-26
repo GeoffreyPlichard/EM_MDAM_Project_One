@@ -1,0 +1,50 @@
+<ion-view view-title="Profil" class="profil">
+  <ion-content>
+   <div class="photo" ng-show="data_picture_url">
+        <img src="{{data_picture_url}}" alt="photo de profil" width="100%"/>
+    </div>
+    <ul class="list">
+        <li class="item">
+          <p>
+              <span class="ion-person padding"></span> Nom d'utilisateur : {{accountExist.pseudo}}
+          </p>
+        </li>
+        <li class="item">
+          <p>
+             <span class="ion-clipboard padding"></span> Nom : {{accountExist.nom}}
+          </p>
+        </li>
+        <li class="item">
+          <p>
+             <span class="ion-clipboard padding"></span> Prénom : {{accountExist.prenom}}
+          </p>
+        </li>
+        <li class="item">
+          <p>
+             <span class="ion-email padding"></span> E-mail : {{accountExist.mail}}
+          </p>
+        </li>
+          <li class="item">
+          <p>
+             <span class="ion-iphone padding"></span> Téléphone : {{accountExist.tel}}
+          </p>
+        </li>
+         <li class="item">
+          <p>
+             <span class="ion-paper-airplane padding"></span> Age : {{accountExist.age}}
+          </p>
+        </li>
+        <li class="item">
+          <p>
+             <span class="ion-contrast padding"></span> Ethnie : {{accountExist.ethnie}}
+          </p>
+        </li>
+          <li class="item">
+          <p>
+              <span class="ion-transgender padding"></span> Sexe : {{accountExist.sexe}}
+          </p>
+        </li>
+    </ul>
+    <script></script>
+  </ion-content>
+</ion-view>

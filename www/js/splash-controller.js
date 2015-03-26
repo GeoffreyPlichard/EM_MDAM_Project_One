@@ -1,7 +1,7 @@
 angular.module('camera.controllers', [])
 
 .controller('SplashCtrl', function($scope, $state, $location, $window, Camera, $rootScope, $ionicLoading, $ionicPopup){
-    $scope.accountExist = localStorage.getItem("user.ownData");
+    $rootScope.accountExist = localStorage.getItem("user.ownData");
     $scope.showConfirm = function() { 
            var confirmPopup = $ionicPopup.confirm({
              title: "C'est l'heure de prendre une photo de vous !"
@@ -14,8 +14,7 @@ angular.module('camera.controllers', [])
      };
     
     $scope.checkAccount = function() {
-        if($scope.accountExist != undefined && $scope.accountExist != "" && $scope.accountExist != null){
-            console.log($scope.accountExist);
+        if($rootScope.accountExist != undefined && $rootScope.accountExist != "" && $rootScope.accountExist != null){
             $state.go('app.activities'); 
         }else{
             $scope.confirmCheckAccount = function() {
