@@ -71,4 +71,22 @@ angular.module('camera.controllers', [])
     $scope.search = function() {
         $scope.addInfos($scope.formUser);
     };
+})
+
+.controller('SignupActivitiesCtrl', function($scope, ActivitiesService){
+	ActivitiesService.get_categories(function(res){
+		$scope.all_activities = res.data;
+	});
+
+	$scope.save_categories = function(){
+		// Array to store categories objects
+		var favorites_activities = [];
+		for (var i = 0; i < $scope.all_activities.length; i++){
+			if($scope.all_activities[i].checked){
+				favorites_activities.push($scope.all_activities[i]);
+				// Save array in localStorage
+				localStorage.setItem('activities.favorites', JSON.stringify(favorites_activities));
+			}
+		}
+	};
 });

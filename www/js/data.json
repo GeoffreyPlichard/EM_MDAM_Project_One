@@ -1,0 +1,79 @@
+[{ 
+    "id": "01",
+    "utilisateur": "yolo", 
+    "prenom": "Sophie",
+    "nom": "Dupont",
+    "age" : "25",
+    "E-mail": "sophie.dupont@live.fr",
+    "numero" : "06 05 04 55 68",
+    "sexe" : "Feminin", 
+    "Ethnie" : "Europeenne",
+    "mdp" : "123456",
+    "photo": "http://blog.educpros.fr/community-management-dans-l-enseignement-superieur/files/2012/03/sophie-figenwald.png",
+    "currentUser": false,
+    "usersSelections" : {
+        "date": "2015-03-28",
+        "start": "12:00",
+        "end" : "13:16",
+        "equipement" : {
+            "idequipements": "25"
+        }
+
+    }
+},
+
+{
+    "id": "02",
+    "utilisateur": "thug-life", 
+    "prenom": "Marie",
+    "nom": "Claire",
+    "age" : "22",
+    "E-mail": "marie.claire@live.fr",
+    "numero" : "06 88 94 57 19",
+    "sexe" : "Feminin", 
+    "Ethnie" : "asiatique",
+    "mdp" : "123456",
+    "photo": "http://medias.unifrance.org/medias/139/3/66443/format_page/marie-trintignant.jpg",
+    "currentUser": false,
+    "usersSelections" : {
+        "date": "2015-03-28",
+        "start": "17:30",
+        "end" : "18:00",
+        "equipement" : {
+            "idequipements": "25"
+        }
+    },
+    "withYou":{
+        "equipement" : {
+            "idequipements": "1208",
+            "userId" : true
+        }
+
+    }
+
+
+},
+
+{
+    "id": "03",
+    "utilisateur": "aight", 
+    "prenom": "Clémence",
+    "nom": "Jean-miche",
+    "age" : "20",
+    "E-mail": "clemence.jeanmiche@live.fr",
+    "numero" : "06 85 66 43 22",
+    "sexe" : "Feminin", 
+    "Ethnie" : "arabic",
+    "mdp" : "123456",
+    "photo": "http://static1.purepeople.com/articles/2/27/15/2/@/186203-clemence-poesy-tourne-actuellement-637x0-2.jpg",
+    "currentUser": false,
+
+    "usersSelections" : {
+        "date": "2015-03-28",
+        "start": "19:45",
+        "end" : "20:00",
+        "equipement" : {
+            "idequipements": "1244"
+        }
+    }
+}]

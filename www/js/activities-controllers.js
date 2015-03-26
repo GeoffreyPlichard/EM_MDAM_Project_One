@@ -48,7 +48,9 @@ angular.module('activities.controllers', [])
 		}
 		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	})
-	.controller('EquipmentsCtrl', function($scope,$ionicModal, $stateParams, ActivitiesService, SelectionService){
+
+
+	.controller('EquipmentsCtrl', function($scope,$ionicModal, $stateParams, ActivitiesService, SelectionService, UsersService){
 		ActivitiesService.get_equipment($stateParams.equipmentId, function(res){
 			var equipment_tmp = res.data;
 			$scope.equipment = equipment_tmp[0];
@@ -76,12 +78,38 @@ angular.module('activities.controllers', [])
 			SelectionService.add(selection);
 			$scope.closeModal();
 		};
+
+		UsersService.get_users(function(res){
+
+			$scope.users = res;
+
+		});
 		
 	})
-	.controller('SelectionCtrl', function($scope, SelectionService){
+
+
+	.controller('SelectionCtrl', function($scope, SelectionService, $stateParams){
 		$scope.selections = SelectionService.getAll();
-		console.log($scope.selections);
+
 	})
+
+	.controller('SelectionDetailCtrl', function($scope, SelectionService, $stateParams, UsersService){
+		var selections = SelectionService.getAll();
+		for(var i = 0; i < selections.length; i++ ){
+			if(selections[i].equipment.idequipements == $stateParams.selectionId){
+				$scope.selection = selections[i];
+			}
+
+		};
+
+		UsersService.get_users(function(res){
+
+			$scope.users = res;
+
+		});
+	})
+
+
 	.controller('SettingsCtrl', function($scope, $ionicModal, ActivitiesService, FavoriteService, $ionicPopup){
 		$scope.favorites = FavoriteService.getAll();
 		// Get all categories

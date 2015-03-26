@@ -18,53 +18,13 @@
 		
   		<div class="sign-up-2">
   			<div class="list">
-
-			    <div class="item item-divider">
-			    	Expos
-			    </div>
-		    	<li class="item item-checkbox">
+  				<li class="item item-checkbox" ng-repeat="category in all_activities">
 					<label class="checkbox">
-						<input type="checkbox">
+						<input type="checkbox" ng-model="category.checked">
 					</label>
-					Louvre
+					{{ category.name }}
 				</li>
-				<li class="item item-checkbox">
-					<label class="checkbox">
-						<input type="checkbox">
-					</label>
-					Catégorie 2
-				</li>
-				<li class="item item-checkbox">
-					<label class="checkbox">
-						<input type="checkbox">
-					</label>
-					Catégorie 3
-				</li>
-
-			    <div class="item item-divider">
-			    	Enfants
-			    </div>
-
-				<li class="item item-checkbox">
-					<label class="checkbox">
-						<input type="checkbox">
-					</label>
-					Park d'attraction
-				</li>
-				<li class="item item-checkbox">
-					<label class="checkbox">
-						<input type="checkbox">
-					</label>
-					Catégorie 2
-				</li>
-				<li class="item item-checkbox">
-					<label class="checkbox">
-						<input type="checkbox">
-					</label>
-					Catégorie 3
-				</li>
-
-			  	<a href="#/app/activities" class="button button-block button-positive">Continuer</a>
+			  	<a href="#/app/activities" class="button button-block button-positive" ng-click="save_categories()">Continuer</a>
 			</div>
   		</div>
 	</ion-content>

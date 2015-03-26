@@ -10,6 +10,14 @@
 .popup-body{
 	overflow: hidden;
 }
+
+.bar-footer{
+	height: 60px;
+}
+
+.bar-footer .button-full{
+	height: 40px;
+}
 /* Splashscreen */
 .splashscreen .logo{
 	text-align: center;
@@ -86,7 +94,7 @@
   	border-radius: 50%;
   	height: 200px;
   	overflow: hidden;
-  	margin: 145px auto 30px auto;
+  	margin: 30px auto;
 }
 /* Activites */
 .item-avatar span{
@@ -123,6 +131,13 @@
 	padding: 0 !important;
 }
 /* Activites-details */
+
+.item-thumbnail-left > img:first-child, .item-thumbnail-left .item-image, .item-thumbnail-left .item-content > img:first-child, .item-thumbnail-left .item-content .item-image{
+
+	max-height: inherit;
+	height: auto !important;
+	padding-bottom: 20px;
+}
 /* Selection */
 /* Selection-detail */
 .item-thumbnail-left p{
