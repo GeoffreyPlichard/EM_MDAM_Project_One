@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers','camera.controllers', 'camera.services', 'activities.services', 'activities.controllers', 'users.services'])
+angular.module('starter', ['ionic', 'camera.controllers', 'camera.services', 'activities.services', 'activities.controllers', 'users.services'])
 
 
 
@@ -39,15 +39,15 @@ angular.module('starter', ['ionic', 'starter.controllers','camera.controllers', 
 
   .state('signupActivities', {
     url: "/signupActivities",
-    templateUrl: "templates/signup-activities.html"
+    templateUrl: "templates/signup-activities.html",
+    controller:'SignupActivitiesCtrl'
     
   })
 
   .state('app', {
     url: "/app",
     abstract: true,
-    templateUrl: "templates/menu.html",
-    controller: 'AppCtrl'
+    templateUrl: "templates/menu.html"
   })
 
   .state('app.activities', {
