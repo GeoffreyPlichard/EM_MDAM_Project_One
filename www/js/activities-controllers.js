@@ -30,7 +30,7 @@ angular.module('activities.controllers', [])
 					for (var j = 0; j < $scope.equipments.length; j++){
 						if($scope.selections[i].equipment.idequipements == $scope.equipments[j].id){
 							$scope.equipments[j].selected = true;
-							console.log($scope.equipments[j].selected);
+							//console.log($scope.equipments[j].selected);
 
 						}
 					}
