@@ -7,17 +7,21 @@ angular.module('activities.services', [])
 	.factory('ActivitiesService', function($http, $ionicLoading){
 		return {
 			get_categories: function(cb){
+                $ionicLoading.show({ template: 'Traitement des données...' });
 				$http
 					.get('https://api.paris.fr/api/data/1.0/Equipements/get_categories/?token=9127a98dbdf42ad085f3d9f97dd0d301a3e12bb530798f441d83dc49cb8e2672')
 					.success(function(res){
+                        $ionicLoading.hide();
 						cb(res);
 						
 					})
 					.error(function(res){
+                        alert("Erreur d'Api PAris, essayer ultérieurement !");
+                        $ionicLoading.hide();
 					});
 			},
 			get_equipments: function(id, cb){
-				$ionicLoading.show({ template: 'Recherche...' });
+				$ionicLoading.show({ template: 'Traitement des données...' });
 				$http
 					.get('https://api.paris.fr/api/data/1.1/Equipements/get_equipements/?token=9127a98dbdf42ad085f3d9f97dd0d301a3e12bb530798f441d83dc49cb8e2672&offset=0&limit=10&cid='+ id)
 					.success(function(res){
@@ -38,6 +42,8 @@ angular.module('activities.services', [])
 						
 					})
 					.error(function(res){
+                        alert("Erreur d'Api PAris, essayer ultérieurement !");
+                        $ionicLoading.hide();
 					});
 			},
 			get_geo_equipments: function(id, lat, lon, radius, cb){
@@ -48,6 +54,8 @@ angular.module('activities.services', [])
 						
 					})
 					.error(function(res){
+                        alert("Erreur d'Api PAris, essayer ultérieurement !");
+                        $ionicLoading.hide();
 					});
 			}
 		};
