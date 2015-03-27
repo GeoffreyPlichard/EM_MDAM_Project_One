@@ -84,6 +84,21 @@ angular.module('activities.controllers', [])
 			$scope.users = res;
 
 		});
+
+		$scope.showDatePicker = function($event) {
+        var options = {
+            date: new Date(),
+            mode: 'date'
+        };
+        datePicker.show(options, function(date){
+            if(date != 'Invalid Date') {
+                console.log("Date came" + date);
+            } else {
+                console.log(date);
+            }
+        });
+        $event.stopPropagation();  
+    };
 		
 	})
 
