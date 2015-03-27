@@ -38,6 +38,7 @@ angular.module('camera.services', [])
                             
                         }). error( function() {
                             alert("Error while uploading...");
+                            $ionicLoading.hide();
                         });
                     
             
@@ -47,6 +48,7 @@ angular.module('camera.services', [])
 
         function onFail(message) {
             alert('Failed because: ' + message);
+            $ionicLoading.hide(); 
         }
 
     }

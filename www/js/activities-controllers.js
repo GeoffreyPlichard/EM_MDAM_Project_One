@@ -84,7 +84,6 @@ angular.module('activities.controllers', [])
 			$scope.users = res;
 
 		});
-
 		
 	})
 
