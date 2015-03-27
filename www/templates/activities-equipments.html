@@ -4,7 +4,7 @@
       <h1 class="title">Choisissez une date</h1>
     </ion-header-bar>
     <ion-content>
-    	<form name="dateForm" novalidate ng-submit="dateForm.$valid && addToSelection(this, equipment)">
+    	<form name="dateForm" novalidate ng-submit="addToSelection(this, equipment)">
 	    	<div class="list">
 	    	  <label class="item item-input item-stacked-label">
 	    	    <span class="input-label">Jour</span>
@@ -46,7 +46,7 @@
 			</button>
 			
 		
-		<ul class="list" ng-show="user">
+		<ul class="list">
     		<li class="item">
     			ILS Y VONT AUSSI !
     		</li>
