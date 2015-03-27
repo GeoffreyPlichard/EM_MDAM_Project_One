@@ -23,7 +23,9 @@ angular.module('starter', ['ionic', 'camera.controllers', 'camera.services', 'ac
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+
+.config(function($stateProvider, $urlRouterProvider, $compileProvider) {
+   $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|file|tel):/);
   $stateProvider
 
   .state('splashscreen', {
