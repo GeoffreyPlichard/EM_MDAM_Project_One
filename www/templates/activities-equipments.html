@@ -46,11 +46,11 @@
 			</button>
 			
 		
-		<ul class="list">
+		<ul class="list" ng-show="user">
     		<li class="item">
     			ILS Y VONT AUSSI !
     		</li>
-			<div class="list" >
+			<div class="list">
 
 				<a ng-repeat="user in users " class="item item-thumbnail-left" href="#" ng-if="equipment.idequipements == user.usersSelections.equipement.idequipements" >
 			      	<img ng-src="{{user.photo}}">

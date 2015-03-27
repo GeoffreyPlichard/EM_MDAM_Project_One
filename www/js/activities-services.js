@@ -14,6 +14,7 @@ angular.module('activities.services', [])
 						
 					})
 					.error(function(res){
+                        alert("Erreur d'Api PAris" + res);
 					});
 			},
 			get_equipments: function(id, cb){
@@ -38,6 +39,7 @@ angular.module('activities.services', [])
 						
 					})
 					.error(function(res){
+                        alert("Erreur d'Api PAris" + res);
 					});
 			},
 			get_geo_equipments: function(id, lat, lon, radius, cb){
@@ -48,6 +50,7 @@ angular.module('activities.services', [])
 						
 					})
 					.error(function(res){
+                        alert("Erreur d'Api PAris" + res);
 					});
 			}
 		};
