@@ -73,7 +73,14 @@
         "start": "19:45",
         "end" : "20:00",
         "equipement" : {
-            "idequipements": "1244"
+            "idequipements": "14755"
         }
+    },
+    "withYou":{
+        "equipement" : {
+            "idequipements": "14755",
+            "userId" : true
+        }
+
     }
 }]

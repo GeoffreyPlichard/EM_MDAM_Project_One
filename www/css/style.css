@@ -18,6 +18,13 @@
 .bar-footer .button-full{
 	height: 40px;
 }
+
+.button-fixed-bottom{
+
+	position: fixed;
+  	bottom: -10px;
+  	width: 100%;
+}
 /* Splashscreen */
 .splashscreen .logo{
 	text-align: center;
