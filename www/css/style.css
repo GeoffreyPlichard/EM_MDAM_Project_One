@@ -34,6 +34,13 @@
 	color: white;
 	padding-left: 20px;
 }
+
+.message-error{
+	display: block;
+  	background: white;
+  	padding: 2px 20px;
+  	color: red;
+}
 .header{
 	overflow: hidden;
 	width: 210px;

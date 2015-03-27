@@ -23,13 +23,13 @@
             <div class="sign-up-1" >
                 <div class="list">
                 	<div ng-show="searchForm.$submitted || searchForm.uPseudo.$touched">
-				      <div ng-show="searchForm.uPseudo.$error.required">Veuillez remplir votre pseudo.</div>
+				      <div  class="message-error"  ng-show="searchForm.uPseudo.$error.required">Veuillez remplir votre pseudo.</div>
 				    </div>
                     <label class="item item-input">
                         <input type="text" placeholder="Nom d'utilisateur" name="uPseudo"  ng-model="formUser.pseudo" ng-required="true">
                     </label>
                     <div ng-show="searchForm.$submitted || searchForm.uName.$touched">
-				      <div ng-show="searchForm.uName.$error.required">Veuillez remplir votre nom.</div>
+				      <div class="message-error"   ng-show="searchForm.uName.$error.required">Veuillez remplir votre nom.</div>
 				    </div>
                    <label class="item item-input">
                         <input type="text" placeholder="Nom" name="uName"  ng-model="formUser.nom" ng-required="true">
@@ -40,8 +40,8 @@
                     </label>
 
                     <div ng-show="searchForm.$submitted || searchForm.uEmail.$touched">
-                          <span ng-show="searchForm.uEmail.$error.required">Veuillez renseigner votre emil.</span>
-                          <span ng-show="searchForm.uEmail.$error.email">Votre email n'est pas valide.</span>
+                          <span class="message-error" ng-show="searchForm.uEmail.$error.required">Veuillez renseigner votre email.</span>
+                          <span  class="message-error" ng-show="searchForm.uEmail.$error.email">Votre email n'est pas valide.</span>
                         </div>
                     <label class="item item-input">
                         <input type="text" placeholder="E-mail" name="uEmail"  ng-model="formUser.mail" ng-required="true">

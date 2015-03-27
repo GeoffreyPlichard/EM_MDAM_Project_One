@@ -183,6 +183,40 @@
         }
 
     }
+},
+
+{
+    "id": "06",
+    "utilisateur": "aight", 
+    "prenom": "Jean-miche",
+    "nom": "clery",
+    "age" : "28",
+    "E-mail": "Jean-miche.clery@live.fr",
+    "numero" : "06 85 66 43 22",
+    "sexe" : "Feminin", 
+    "Ethnie" : "arabic",
+    "mdp" : "123456",
+    "photo": "http://sylvainw.github.io/HTML5-Future/img/jm.jpg",
+    "currentUser": false,
+
+    "usersSelections" : {
+        "date": "2015-03-28",
+        "start": "19:45",
+        "end" : "20:00",
+        "equipement" : {
+            "idequipements": "4086"
+        }
+    },
+    "withYou":{
+        "equipement" : {
+            "idequipements": "4086",
+            "userId" : true
+        }
+
+    }
 }
 
 ]
+
+
+
