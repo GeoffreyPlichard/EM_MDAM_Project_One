@@ -16,7 +16,14 @@
         "start": "12:00",
         "end" : "13:16",
         "equipement" : {
-            "idequipements": "25"
+            "idequipements": "1244"
+        }
+
+    },
+    "withYou":{
+        "equipement" : {
+            "idequipements": "1244",
+            "userId" : true
         }
 
     }
@@ -40,12 +47,12 @@
         "start": "17:30",
         "end" : "18:00",
         "equipement" : {
-            "idequipements": "25"
+            "idequipements": "1519"
         }
     },
     "withYou":{
         "equipement" : {
-            "idequipements": "1208",
+            "idequipements": "1519",
             "userId" : true
         }
 
@@ -73,14 +80,109 @@
         "start": "19:45",
         "end" : "20:00",
         "equipement" : {
-            "idequipements": "14755"
+            "idequipements": "1246"
         }
     },
     "withYou":{
         "equipement" : {
-            "idequipements": "14755",
+            "idequipements": "1246",
             "userId" : true
         }
 
     }
-}]
+},
+
+{
+    "id": "04",
+    "utilisateur": "aight", 
+    "prenom": "charlotte",
+    "nom": "carriere",
+    "age" : "20",
+    "E-mail": "clemence.jeanmiche@live.fr",
+    "numero" : "06 85 66 43 22",
+    "sexe" : "Feminin", 
+    "Ethnie" : "arabic",
+    "mdp" : "123456",
+    "photo": "http://imworld.aufeminin.com/dossiers/D20110912/charlotte-le-bon-194148_L.jpg",
+    "currentUser": false,
+
+    "usersSelections" : {
+        "date": "2015-03-28",
+        "start": "19:45",
+        "end" : "20:00",
+        "equipement" : {
+            "idequipements": "1244"
+        }
+    },
+    "withYou":{
+        "equipement" : {
+            "idequipements": "1244",
+            "userId" : true
+        }
+
+    }
+},
+
+{
+    "id": "05",
+    "utilisateur": "aight", 
+    "prenom": "Catherine",
+    "nom": "Deneuve",
+    "age" : "20",
+    "E-mail": "clemence.jeanmiche@live.fr",
+    "numero" : "06 85 66 43 22",
+    "sexe" : "Feminin", 
+    "Ethnie" : "arabic",
+    "mdp" : "123456",
+    "photo": "http://imworld.aufeminin.com/dossiers/D20110912/catherine-barba-194044_L.jpg",
+    "currentUser": false,
+
+    "usersSelections" : {
+        "date": "2015-03-28",
+        "start": "19:45",
+        "end" : "20:00",
+        "equipement" : {
+            "idequipements": "1519"
+        }
+    },
+    "withYou":{
+        "equipement" : {
+            "idequipements": "1519",
+            "userId" : true
+        }
+
+    }
+},
+
+{
+    "id": "06",
+    "utilisateur": "aight", 
+    "prenom": "Julie",
+    "nom": "Ferrier",
+    "age" : "20",
+    "E-mail": "clemence.jeanmiche@live.fr",
+    "numero" : "06 85 66 43 22",
+    "sexe" : "Feminin", 
+    "Ethnie" : "arabic",
+    "mdp" : "123456",
+    "photo": "http://imworld.aufeminin.com/dossiers/D20110912/julie-ferrier-194159_L.jpg",
+    "currentUser": false,
+
+    "usersSelections" : {
+        "date": "2015-03-28",
+        "start": "19:45",
+        "end" : "20:00",
+        "equipement" : {
+            "idequipements": "1246"
+        }
+    },
+    "withYou":{
+        "equipement" : {
+            "idequipements": "1246",
+            "userId" : true
+        }
+
+    }
+}
+
+]
