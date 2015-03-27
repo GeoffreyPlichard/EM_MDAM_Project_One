@@ -23,8 +23,11 @@
             <div class="sign-up-1" >
                 <div class="list">
                     <label class="item item-input">
-                        <input type="text" placeholder="Nom d'utilisateur"  ng-model="formUser.pseudo" ng-required="true">
+                        <input type="text" placeholder="Nom d'utilisateur" name="uPseudo"  ng-model="formUser.pseudo" ng-required="true">
                     </label>
+                    <div ng-show="form.$submitted || form.uPseudo.$touched">
+				      <div ng-show="form.uPseudo.$error.required">Veuillez remplir ce champs.</div>
+				    </div>
                        
                    <label class="item item-input">
                         <input type="text" placeholder="Nom"  ng-model="formUser.nom" ng-required="true">
